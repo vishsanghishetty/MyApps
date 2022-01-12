@@ -1,0 +1,62 @@
+body{
+font-family: Serif;
+
+}
+
+h1{
+
+  color: gray; 
+}
+
+.center{
+    
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    padding:55px;
+    border-width: 10px;
+    border-color: rgb(209, 110, 110);
+    border-style: solid;
+} 
+
+#user_input{
+ background-color:rgb(167, 241, 245);
+ color:rgb(133, 116, 116);
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 24px;
+  border: 2px solid rgb(100, 71, 71);
+  border-radius: 6px;
+}
+
+button{
+  background-color: #f5af53;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border: 2px solid rgb(100, 71, 71);
+  border-radius: 6px;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+    
+
+.list-container{
+  color:rgb(61, 58, 58);
+  font-size:30px;
+ 
+}
+#search{
+  width: 500px;
+  height: 40px;
+  background-color: aquamarine;
+}
+ul{
+display:table;
+margin: 0 auto;
+
+}
