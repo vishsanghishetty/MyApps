@@ -32,6 +32,7 @@ h1{
 
 button{
   background-color: #f5af53;
+  height: 45px;
   border: none;
   color: white;
   padding: 12px 20px;
@@ -44,15 +45,21 @@ button{
 
 }
     
+input{
+    width: 25px;
+    height: 25px;
+    
+    
+}
 
 .list-container{
   color:rgb(61, 58, 58);
   font-size:30px;
  
 }
-#search{
+#user_input{
   width: 500px;
-  height: 40px;
+  height: 48px;
   background-color: aquamarine;
 }
 ul{
