@@ -54,16 +54,23 @@ input{
 
 .list-container{
   color:rgb(61, 58, 58);
-  font-size:30px;
- 
+  font-size:30px; 
 }
+
 #user_input{
   width: 500px;
   height: 48px;
   background-color: aquamarine;
 }
+
 ul{
 display:table;
 margin: 0 auto;
-
 }
+
+li:before{
+  content:"👉" ;
+  display: inline;
+}
+
+#menu { list-style: none;}
