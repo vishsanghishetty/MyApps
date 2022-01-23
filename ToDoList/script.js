@@ -4,14 +4,12 @@ var input_txt = document.getElementById('user_input') //input box
 var submit = document.querySelector('.submit')         // submit button
 var clear_list = document.querySelector('.clear_list')  // clear list button
 var clear_checked = document.querySelector('.clear_checked') // clear checked button
-//var menu = document.getElementById('menu')
-
 
 function clearItemsChecked() {
     const checked = document.querySelectorAll('input[type="checkbox"]:checked')
     for (let i = 0; i < checked.length; i++) {
 
-        console.log(checked[i].parentElement);
+        // console.log(checked[i].parentElement);
         ul.removeChild(checked[i].parentElement);
 
     }
