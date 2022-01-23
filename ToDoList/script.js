@@ -24,7 +24,7 @@ function createListElement() {
         alert('Please enter a valid list item');
         return;
     }
-    var list_node = document.createElement('li')
+    var list_node = document.createElement('li');
     list_node.appendChild(document.createTextNode(input_txt.value));
     user_input.value = ''
     var check_box = document.createElement('input')
