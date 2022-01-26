@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+body
+{
+ background-color: #007bff;
+
+}
+
+.btn-start,
+.info-box
+{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate( -50%, -50%);
+   
+}
+
+.btn-start button {
+    background:white;
+    height: 55px;
+    width: 180px;
+    border: none;
+    color: #007bff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    margin: 0px 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 15px 30px;
+}
+
+.btn-start button:hover {
+    background-color: hsl(325, 96%, 58%);
+    color: #fff;
+}
+
+.info-box{
+
+background-color: rgb(238, 247, 230);
+width: 450px;
+border-radius: 5px;
+display: none;
+}
+
+.info-box .info-title{
+    font-size: 20px;
+    height:60px;
+    width:100%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 30px;
+
+}
+.info-box .info-list {
+    padding: 15px 35px;
+}
+
+.info-box .info-list .info{
+  font-size: 17px;
+  margin: 5px 0px
+    
+}
+
+li span.list-item{
+    font-weight:600;
+    color: #007bff;
+   
+   }
+   
+li:before{
+       content:"👉" ;
+       display: inline;
+       color:#007fff;
+     }
+
+.info-box .buttons{     
+    border-top: 1px solid lightgrey;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 0px 95px;
+}
+.info-box .buttons button{
+    
+    height: 45px;
+    width: 140px;
+    border: none;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    margin: 0px 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 25px;
+    transition: all 0.3 ease;
+  }
+
+.buttons button.continue{
+    background-color: #007fff;
+    color: #fff;
+}  
+.buttons button.continue:hover{
+    background-color: #007fff;
+    color: #fff;
+}
+
+.buttons button.exit{
+    
+    color: #007bff;
+    background-color:#fff;
+}  
+
+.buttons button.exit:hover{
+    
+    color: #fff;
+    background-color:#007bff;
+}  
+
+  
+#info-list { list-style: none;}
