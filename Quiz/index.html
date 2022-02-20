@@ -13,6 +13,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <link rel="stylesheet" href="style.css">
     </head>
+    <!-- Audio links -->
+    <audio id="wrong_answer_audio" type="audio/mp3">
+      <source src="wrong_answer_audio.mp3">
+    </audio>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
@@ -46,7 +50,7 @@
            HTML, CSS and JavaScript Quiz Application
            </div>
            <div class="timer">
-               <div class="time-text">Time Left</div>
+               <div class="time-left-text">Time Left</div>
                <div class="timer-sec">20</div>
            </div>
 
@@ -54,14 +58,22 @@
         <section>
           <div class="ques-text">
             <!-- Inserted here from script.js -->
-            <!-- insert question as span element from the array of questions -->
+            <!-- insert question as span element from the array of questions-->
           </div>
           <div class="option-list">
             <!-- Inserted here from script.js  -->
+            <!-- Inserted options as div and span elements from the array of questions-->
           </div>
         </section>
+    <footer>
+     <div class="buttons">
+     <button type="button" class="prev-btn">Previous</button>
+     <button type="button" class="next-btn">Next</button>
+    </div>
+    </footer>
 
     </div>
         <script src="script.js"></script>
+        <script src="questions.js"></script>
     </body>
 </html>

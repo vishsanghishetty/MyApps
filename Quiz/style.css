@@ -108,14 +108,14 @@ li:before{
     width: 140px;
     border: none;
     color: #fff;
-    padding: 5px 20px;
+    padding: 5px 25px;
     border: 1px solid #007bff;
     border-radius: 6px;
-    margin: 0px 5px;
+    margin: 30px 5px;
     cursor: pointer;
     font-weight: 500;
     font-size: 16px;
-    padding: 5px 25px;
+    
     transition: all 0.3 ease;
   }
 
@@ -154,7 +154,7 @@ transform: translate(-50%, -50%) scale(.9);
 .quiz-box header{
 
   height: 60px;
-  padding: 0 30px;
+  padding: 0px 30px;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -164,18 +164,151 @@ transform: translate(-50%, -50%) scale(.9);
   border-bottom: 1px solid lightgrey;
 
 }
+header .timer .timer-sec{
+
+    
+    margin: 0px 5px 0px 25px;
+
+}
+
+header .timer .timer-sec span.time_up_icon{
+   
+  color: saddlebrown;
+  border-color:brown transparent (246, 242, 241, 0.657);
+  height: 260px;
+  padding-right: 5px 55px 25px 15px;
+  margin: 5px 0px 0px 0px;
+}
+
+section {
+
+  padding: 25px 30px 20px 30px;
+  background: #fff;
+}
 
 section .ques-text{
 
-    height: 50px;
-    padding: 0 30px;
-    background-color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  }
+
+  section .option-list{
+    padding: 20px 0px;
+    
+}
+
+section .option-list .option{
+  background: aliceblue;
+  border: 1px solid #84c5fe;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 17px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+section .option-list .option .icon{
+  height: 26px;
+  width: 26px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 13px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  line-height: 24px;
+}
+.option-list .option .check_icon .fas.fa-check{
+
+  color: #23903c;
+  border-color: #23903c;
+  background: aliceblue;
+
+}
+
+.option-list .option .cross_icon .fas.fa-times{
+
+  color: #a42834;
+  background: aliceblue;
+  border-color: #a42834;
+
+}
+
+/* footer{
+  height: 60px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid lightgrey;
+  background-color: #fff;
+} */
+
+.quiz-box footer .buttons{
+    border-top: 1px solid lightgrey;
+    height: 60px;
     display: flex;
     align-items: center;
-    justify-content: left;
-    color:hsl(194, 69%, 31%)
-  }
-  .icon-check .fas.fa-check{
-    color: #fa4299;
-  }
+    justify-content: right;
+    padding: 5px 95px;
+    
+}
+
+footer button {
+  
+  height: 40px;
+  padding: 15px 13px;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 5px;
+  background: #007bff;
+  border: 1px solid #007bff;
+  line-height: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+  margin-left:10px;
+  margin-right: 0px;
+  
+}
+section .option-list .option.disabled{
+  pointer-events: none;
+}
+footer .buttons button.show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+
+.buttons button.next_btn{
+  background-color: #007fff;
+  color: #fff;
+}  
+.buttons button.next_btn:hover{
+  background-color: #007fff;
+  color: #fff;
+}
+
+.buttons button.prev_btn{
+  
+  color: #007bff;
+  background-color:#fff;
+}  
+
+.buttons button.prev_btn:hover{
+  
+  color: #fff;
+  background-color:#007bff;
+}
 .info-list { list-style: none;}
