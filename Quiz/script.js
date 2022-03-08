@@ -5,7 +5,7 @@ const exit_button = document.querySelector(".exit");
 const continue_button = document.querySelector(".continue");
 const quiz_box = document.querySelector(".quiz-box");
 const option_list = document.querySelector(".option-list");
-const prev_btn = document.querySelector("footer .prev-btn");
+//const prev_btn = document.querySelector("footer .prev-btn");
 const next_btn = document.querySelector("footer .next-btn");
 const timer_left_text = document.querySelector(".timer .time-left-text")
 const timer_count = document.querySelector(".timer .timer-sec");
@@ -17,6 +17,7 @@ console.log(timer_count.textContent);
 
 let ques_count = 0;
 let time_value = 20;
+let index = 0;
 let counter;
 
 function showQuizRules() {
@@ -40,7 +41,7 @@ exit_button.onclick = () => {
 continue_button.onclick = () => {
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
-    showQuestion(0);
+    showQuestion(index);
     start_timer(20);
 
 }
@@ -70,24 +71,16 @@ const showQuestion = (index) => {
 
         option[i].setAttribute('onclick', "optionSelected(this)");
 
-
     }
-    if (index > 0 && index < 5) {
+    if (index >= 0 && index < 4) {
 
         next_btn.classList.add("show"); //show the previous button if user selected any option
-        prev_btn.classList.add("show"); //show the next button if user selected any option
+        // prev_btn.classList.add("show"); //show the next button if user selected any option
     }
 
-    //prev button remove when on first question
-    if (index === 0) {
-
-        prev_btn.classList.remove("show");
-        next_btn.classList.add("show");
-    }
-    //next button remove when on last question
-    else if (index === 4) {
+    if (index === 4) {
         next_btn.classList.remove("show");
-        prev_btn.classList.add("show");
+        // prev_btn.classList.add("show");
 
     }
 
@@ -100,6 +93,7 @@ let cross_tag = '<div class="cross_icon"><i class="fas fa-times"></i></div>';
 
 
 function optionSelected(answer) {
+    clearInterval(counter);
     console.log(answer);
     let user_answer = answer.textContent;
     console.log("user answer is " + user_answer);
@@ -133,37 +127,36 @@ function optionSelected(answer) {
     }
 
 }
-let prev_counter = 0;
+//let prev_counter = 0;
 const next_btnClick = () => {
+    index++;
 
     if (ques_count < questions.length - 1) {
 
         ques_count++;
-        showQuestion(ques_count);
+        showQuestion(index);
         clearInterval(counter); //clear previous set interval
         start_timer(time_value); // start the new timer
         timer_left_text.textContent = "Time Left";
-        prev_counter = ques_count;
+        //prev_counter = ques_count;
     }
 
 }
 
 
-const prev_btnClick = () => {
+// const prev_btnClick = () => {
+//     index--;
+//     if (prev_counter < questions.length + 1) {
+//         prev_counter--;
+//         showQuestion(prev_counter);
+//         clearInterval(counter); //clear previous set interval
+//         start_timer(time_value); // start the new timer
+//         timer_left_text.textContent = "Time Left";
+//         ques_count--;
 
-    if (prev_counter < questions.length + 1) {
-        prev_counter--;
-        showQuestion(prev_counter);
-        clearInterval(counter); //clear previous set interval
-        start_timer(time_value); // start the new timer
-        timer_left_text.textContent = "Time Left";
-        ques_count--;
+//     }
 
-
-
-    }
-
-}
+// }
 
 function start_timer(time) {
     const time_up_txt = "Time Up!"
@@ -175,6 +168,9 @@ function start_timer(time) {
         timer_count.textContent = time;
         time = time - 1;
 
+        const allOptions = option_list.children.length;
+        let correctAnswer = questions[ques_count].answer;
+
         if (time < 0) {
             clearInterval(counter);
             timer_left_text.textContent = `${time_up_txt}`;
@@ -183,14 +179,27 @@ function start_timer(time) {
             timer_count.insertAdjacentHTML('beforeend', time_up_img);
             //disable click events on the options
 
+            for (i = 0; i < allOptions; i++) {
+                if (option_list.children[i].textContent == correctAnswer) { //if there is an option which is matched to an array answer
+                    option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
+                    option_list.children[i].insertAdjacentHTML("beforeend", check_tag); //adding tick icon to matched option
+                    console.log("Time Off: Auto selected correct answer.");
+                }
+            }
 
+            for (let i = 0; i < allOptions; i++) {
+
+                option_list.children[i].classList.add("disabled");
+            }
         }
+
+
 
     }
 
 }
 //upon clicking the previous button, show the respective question in the quizbox
-prev_btn.addEventListener('click', prev_btnClick)
+// prev_btn.addEventListener('click', prev_btnClick)
 
 //upon clicking the next button, show the respective question in the quizbox
 next_btn.addEventListener('click', next_btnClick)

@@ -284,6 +284,18 @@ footer button {
 section .option-list .option.disabled{
   pointer-events: none;
 }
+section .option-list .option.correct{
+
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .option-list .option.incorrect{
+  color: #721c24;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
 footer .buttons button.show{
   opacity: 1;
   pointer-events: auto;
@@ -291,24 +303,25 @@ footer .buttons button.show{
 }
 
 
-.buttons button.next_btn{
+.buttons button.next-btn{
   background-color: #007fff;
   color: #fff;
 }  
-.buttons button.next_btn:hover{
+.buttons button.next-btn:hover{
   background-color: #007fff;
   color: #fff;
 }
 
-.buttons button.prev_btn{
+.buttons button.prev-btn{
   
   color: #007bff;
   background-color:#fff;
 }  
 
-.buttons button.prev_btn:hover{
+.buttons button.prev-btn:hover{
   
   color: #fff;
   background-color:#007bff;
 }
+
 .info-list { list-style: none;}
