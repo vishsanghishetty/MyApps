@@ -29,9 +29,9 @@ let questions = [
     {
         number: 3,
         question: "What is JavaScript primarily used for?",
-        answer: "To add dynamic behavior to the webpage and add special effects to the webpage",
+        answer: "to add dynamic behavior to the webpage and add special effects to the webpage",
         options: [
-            "To add dynamic behavior to the webpage and add special effects to the webpage",
+            "to add dynamic behavior to the webpage and add special effects to the webpage",
             "to add styles to the webpage",
             "to add structure a webpage and its content",
             "used as an alternative to SQL",

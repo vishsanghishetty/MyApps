@@ -4,18 +4,19 @@ const info_box = document.querySelector(".info-box");
 const exit_button = document.querySelector(".exit");
 const continue_button = document.querySelector(".continue");
 const quiz_box = document.querySelector(".quiz-box");
+const score_box = document.querySelector(".score-box");
 const option_list = document.querySelector(".option-list");
-//const prev_btn = document.querySelector("footer .prev-btn");
+const correct_ans = document.querySelector(".correct-ans");
+const incorrect_ans = document.querySelector(".incorrect-ans");
 const next_btn = document.querySelector("footer .next-btn");
+const show_score = document.querySelector("footer .show-score");
 const timer_left_text = document.querySelector(".timer .time-left-text")
 const timer_count = document.querySelector(".timer .timer-sec");
 var wrong_answer_audio = document.querySelector("#wrong_answer_audio")
 wrong_answer_audio.volume = 0.5;
-
 console.log(timer_left_text);
 console.log(timer_count.textContent);
 
-let ques_count = 0;
 let time_value = 20;
 let index = 0;
 let counter;
@@ -46,6 +47,33 @@ continue_button.onclick = () => {
 
 }
 
+const quit_quiz = score_box.querySelector(".score-box-buttons .quit-quiz");
+// const replay_quiz = score_box.querySelector(".score-box-buttons .replay-quiz");
+// let ques_count = 0;
+// let timeValue = 20;
+// replay_quiz.onclick = () => {
+
+//     quiz_box.classList.add("activeQuiz"); //show quiz box
+//     score_box.classList.remove("activeScore");
+//     clearInterval(counter);
+//     start_timer(time_value);
+//     showQuestion(ques_count);
+//     next_btn.classList.remove("show");
+//     // if (replay_counter == 4) {
+//     //     show_score.classList.add("show");
+//     // }
+//     // else {
+//     //     show_score.classList.remove("show");
+//     //     next_btn.classList.add("show");
+//     // }
+//     timer_left_text.textContent = "Time Left"; //change the text of timeText to Time Left
+// }
+
+quit_quiz.onclick = () => {
+
+    window.location.reload(); //reload the current window
+
+}
 
 const showQuestion = (index) => {
 
@@ -72,18 +100,6 @@ const showQuestion = (index) => {
         option[i].setAttribute('onclick', "optionSelected(this)");
 
     }
-    if (index >= 0 && index < 4) {
-
-        next_btn.classList.add("show"); //show the previous button if user selected any option
-        // prev_btn.classList.add("show"); //show the next button if user selected any option
-    }
-
-    if (index === 4) {
-        next_btn.classList.remove("show");
-        // prev_btn.classList.add("show");
-
-    }
-
 }
 
 //creating div tags for check and cross icons for correct and incorrect answers
@@ -91,7 +107,7 @@ const showQuestion = (index) => {
 let check_tag = '<div class="check_icon"><i class="fas fa-check"></i></div>';
 let cross_tag = '<div class="cross_icon"><i class="fas fa-times"></i></div>';
 
-
+let score_count = 0;
 function optionSelected(answer) {
     clearInterval(counter);
     console.log(answer);
@@ -99,9 +115,9 @@ function optionSelected(answer) {
     console.log("user answer is " + user_answer);
     const allOptions = option_list.children.length; // length of the list of options 4
 
-    let correct_answer = questions[ques_count].answer;
+    let correct_answer = questions[index].answer;
     if (user_answer == correct_answer) {
-
+        score_count++;
         answer.classList.add('correct');
         answer.insertAdjacentHTML('beforeend', check_tag);
         console.log('correct answer');
@@ -124,39 +140,64 @@ function optionSelected(answer) {
     for (let i = 0; i < allOptions; i++) {
 
         option_list.children[i].classList.add("disabled");
+
+    }
+
+    if (index < 4) {
+
+        next_btn.classList.add("show");
+    }
+    else if (index == 4) {
+        next_btn.classList.remove("show");
+        show_score.classList.add("show");
     }
 
 }
-//let prev_counter = 0;
+
 const next_btnClick = () => {
-    index++;
 
-    if (ques_count < questions.length - 1) {
+    if (index < questions.length - 1) {
 
-        ques_count++;
+        index++;
         showQuestion(index);
         clearInterval(counter); //clear previous set interval
         start_timer(time_value); // start the new timer
         timer_left_text.textContent = "Time Left";
-        //prev_counter = ques_count;
+        next_btn.classList.remove("show");
+        if (index < 4) {
+
+            next_btn.classList.add("show");
+        }
+
     }
 
 }
+const score_icon = document.querySelector(".score-icon")
+function showScore() {
+    info_box.classList.remove("activeInfo")
+    quiz_box.classList.remove("activeQuiz"); //remove quiz box
+    score_box.classList.add("activeScore");
+
+    let score_txt = score_box.querySelector(".score-txt");
+    if (score_count > 3) {
+
+        let score_tag = `<span> and congrats! 🎉, you answered <p> ${score_count}</p> out of <p> ${questions.length} </p>questions correctly.</span>`
+        score_txt.innerHTML = score_tag;
+    }
+    else if (score_count < 3) {
+
+        let score_tag = `<span>and nice 😎, You got <p> ${score_count} </p> out of <p> ${questions.length} </p> questions correctly.</span>`;
+        score_txt.innerHTML = score_tag;
+    }
+    else {
+
+        let score_tag = `<span>and sorry 😐, You got only <p> ${score_count} </p> out of <p>  ${questions.length} </p></span>`;
+        score_txt.innerHTML = score_tag;
+    }
 
 
-// const prev_btnClick = () => {
-//     index--;
-//     if (prev_counter < questions.length + 1) {
-//         prev_counter--;
-//         showQuestion(prev_counter);
-//         clearInterval(counter); //clear previous set interval
-//         start_timer(time_value); // start the new timer
-//         timer_left_text.textContent = "Time Left";
-//         ques_count--;
 
-//     }
-
-// }
+}
 
 function start_timer(time) {
     const time_up_txt = "Time Up!"
@@ -169,37 +210,37 @@ function start_timer(time) {
         time = time - 1;
 
         const allOptions = option_list.children.length;
-        let correctAnswer = questions[ques_count].answer;
-
         if (time < 0) {
             clearInterval(counter);
             timer_left_text.textContent = `${time_up_txt}`;
 
             timer_count.textContent = "";
             timer_count.insertAdjacentHTML('beforeend', time_up_img);
+
             //disable click events on the options
 
-            for (i = 0; i < allOptions; i++) {
-                if (option_list.children[i].textContent == correctAnswer) { //if there is an option which is matched to an array answer
-                    option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
-                    option_list.children[i].insertAdjacentHTML("beforeend", check_tag); //adding tick icon to matched option
-                    console.log("Time Off: Auto selected correct answer.");
+            for (let i = 0; i < allOptions; i++) {
+                let correct_answer = questions[index].answer;
+                if (option_list.children[i].textContent == correct_answer) {
+                    option_list.children[i].setAttribute("class", "option correct");
+                    option_list.children[i].insertAdjacentHTML('beforeend', check_tag);
+                    console.log('Auto select the correct answer');
                 }
+
             }
 
             for (let i = 0; i < allOptions; i++) {
 
                 option_list.children[i].classList.add("disabled");
             }
+
+            next_btn.classList.add("show");
         }
-
-
-
     }
 
 }
-//upon clicking the previous button, show the respective question in the quizbox
-// prev_btn.addEventListener('click', prev_btnClick)
 
 //upon clicking the next button, show the respective question in the quizbox
 next_btn.addEventListener('click', next_btnClick)
+
+show_score.addEventListener('click', showScore)

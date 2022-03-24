@@ -4,75 +4,98 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>HTML CSS and JavaScript Quiz</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <!-- Audio links -->
-    <audio id="wrong_answer_audio" type="audio/mp3">
-      <source src="wrong_answer_audio.mp3">
-    </audio>
-    <body>
-        <!--[if lt IE 7]>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>HTML CSS and JavaScript Quiz</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<!-- Audio links -->
+<audio id="wrong_answer_audio" type="audio/mp3">
+  <source src="wrong_answer_audio.mp3">
+</audio>
+
+<body>
+  <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Start Quiz Button -->
-        <div class="btn-start"><button>Start Quiz</button></div>
+  <!-- Start Quiz Button -->
+  <div class="btn-start"><button>Start Quiz</button></div>
 
-        <!-- Info Box -->
-    <div class="info-box">
-          <div class="info-title">  
-        <span> Some rules of the quiz</span>
-          </div>
-        <ul class="info-list">
-          <li id="info">You will have only <span class="list-item">20 seconds</span> per each question</li>
-          <li id="info">You can't select any option once the time goes off</li>
-          <li id="info">You can't exit from the quiz while you are playing</li>
-          <li id="info">You will get 1 point per each question</li>
-          <li id="info">Results will be displayed at the end of the quiz</li>
-        </ul>
-        <div class="buttons">
-        <button class="exit">Exit</button>
-        <button class="continue">Continue</button>
-        </div>
+  <!-- Info Box -->
+  <div class="info-box">
+    <div class="info-title">
+      <span> Some rules of the quiz</span>
     </div>
-    
-    <!--Quiz Box -->
-    <div class="quiz-box">
-        <header>
-           <div class="title">
-           HTML, CSS and JavaScript Quiz Application
-           </div>
-           <div class="timer">
-               <div class="time-left-text">Time Left</div>
-               <div class="timer-sec">20</div>
-           </div>
-        </header>
-        <section>
-          <div class="ques-text">
-            <!-- Inserted here from script.js -->
-            <!-- insert question as span element from the array of questions-->
-          </div>
-          <div class="option-list">
-            <!-- Inserted here from script.js  -->
-            <!-- Inserted options as div and span elements from the array of questions-->
-          </div>
-        </section>
+    <ul class="info-list">
+      <li id="info">You will have only <span class="list-item">20 seconds</span> per each question</li>
+      <li id="info">You can't select any option once the time goes off</li>
+      <li id="info">You can't exit from the quiz while you are playing</li>
+      <li id="info">You will get 1 point per each question</li>
+      <li id="info">Results will be displayed at the end of the quiz</li>
+    </ul>
+    <div class="buttons">
+      <button class="exit">Exit</button>
+      <button class="continue">Continue</button>
+    </div>
+  </div>
+
+  <!--Quiz Box -->
+  <div class="quiz-box">
+    <header>
+      <div class="title">
+        HTML, CSS and JavaScript Quiz Application
+      </div>
+      <div class="timer">
+        <div class="time-left-text">Time Left</div>
+        <div class="timer-sec">20</div>
+      </div>
+    </header>
+    <section>
+      <div class="ques-text">
+        <!-- Inserted here from script.js -->
+        <!-- insert question as span element from the array of questions-->
+      </div>
+      <div class="option-list">
+        <!-- Inserted here from script.js  -->
+        <!-- Inserted options as div and span elements from the array of questions-->
+      </div>
+    </section>
     <footer>
-     <div class="buttons">
-     <button type="button" class="prev-btn">Previous</button>
-     <button type="button" class="next-btn">Next</button>
-     </div>
+      <div class="buttons">
+        <button type="button" class="next-btn">Next</button>
+        <button type="button" class="show-score">Show Score</button>
+      </div>
     </footer>
-
+  </div>
+  <!--Score Box -->
+  <div class="score-box">
+    <div class="score-icon">
+      <i class="fa fa-star"></i>
     </div>
-        <script src="script.js"></script>
-        <script src="questions.js"></script>
-    </body>
+    <div class="quiz-complete">You've completed the Quiz!</div>
+    <div class="score-txt">
+      <!--Inserting the score here from JS-->
+    </div>
+    <div class="score-icon">
+      <i class="fa fa-star"></i>
+    </div>
+    <div class="score-box-buttons">
+      <!-- <button class="replay-quiz">Replay Quiz</button> -->
+      <button class="quit-quiz">Quit Quiz</button>
+    </div>
+  </div>
+
+
+
+
+  <script src="script.js"></script>
+  <script src="questions.js"></script>
+</body>
+
 </html>
