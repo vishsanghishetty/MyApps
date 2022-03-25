@@ -4,36 +4,43 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>To Do List</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>To Do List</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-     <div class="center">
-        <h1>To-Do List</h1>
-        
-        <input id ="user_input" type="search" placeholder="Add an item to the list!">
-        <button class ="submit">Submit</button>
-        <button class ="clear_checked" type="button">Clear Checked</button>
-        <button class ="clear_list" type="button">Clear List</button>
-        
+    <div class="center">
+        <header>
+            <h1>To-Do List<img src="https://cdn-icons-png.flaticon.com/128/3176/3176366.png" class="figure"
+                    alt="to-do-logo">
+            </h1>
+        </header>
+        <input id="user_input" type="search" placeholder="Add an item to the list">
+        <button class="submit">Submit</button>
+        <button class="clear_checked" type="button">Clear <span class="icon">☑</span></button>
+        <button class="clear_list" type="button">Clear List</button>
 
-        
-     </div>
-     <div class ="list-container">
-     <ul id="menu" class="standard-list">
-        
-     </ul>
+
+
+
     </div>
-     
+    <div class="list-container">
+        <ul id="menu" class="standard-list">
 
-        <script src="script.js"></script>
-    </body>
+        </ul>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
 </html>

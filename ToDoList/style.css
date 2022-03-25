@@ -1,76 +1,83 @@
-body{
-font-family: Serif;
-
+body {
+  font-family: Serif;
 }
 
-h1{
-
-  color: gray; 
+h1 {
+  color: gray;
+}
+header {
+  text-align: center;
 }
 
-.center{
-    
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 10px;
-    padding:55px;
-    border-width: 10px;
-    border-color: rgb(209, 110, 110);
-    border-style: solid;
-} 
+img.figure {
+  height: 50px;
+  width: 50px;
+}
+.center {
+  margin: 25px 320px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  border-width: 8px;
+  border-color: rgb(238, 114, 114);
+  border-style: solid;
+}
 
-#user_input{
- background-color:rgb(167, 241, 245);
- color:rgb(133, 116, 116);
+#user_input {
+  background-color: rgb(167, 241, 245);
+  color: rgb(133, 116, 116);
   width: 70%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  margin: 0px;
   font-size: 24px;
   border: 2px solid rgb(100, 71, 71);
   border-radius: 6px;
 }
 
-button{
+button {
   background-color: #f5af53;
   height: 45px;
   border: none;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 5px 10px;
   border: 2px solid rgb(100, 71, 71);
   border-radius: 6px;
   font-size: 18px;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
-
 }
-    
-input{
-    width: 25px;
-    height: 25px;
-    
-    
+.icon {
+  position: relative;
+  /* Adjust these values accordingly */
+  top: 2.5px;
 }
 
-.list-container{
-  color:rgb(61, 58, 58);
-  font-size:30px; 
+input {
+  width: 25px;
+  height: 25px;
 }
 
-#user_input{
+.list-container {
+  color: rgb(61, 58, 58);
+  font-size: 30px;
+}
+
+#user_input {
   width: 500px;
   height: 48px;
-  background-color: aquamarine;
+  background-color: rgb(145, 236, 206);
 }
 
-ul{
-display:table;
-margin: 0 auto;
+ul {
+  display: table;
+  margin: 0 auto;
 }
 
-li:before{
-  content:"👉" ;
+li:before {
+  content: "👉";
   display: inline;
 }
 
-#menu { list-style: none;}
+#menu {
+  list-style: none;
+}
