@@ -54,11 +54,6 @@ button {
   margin: 4px 2px 0px 8px;
   cursor: pointer;
 }
-.icon {
-  position: relative;
-  /* Adjust these values accordingly */
-  top: 2.5px;
-}
 
 input {
   width: 25px;
