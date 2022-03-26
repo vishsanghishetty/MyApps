@@ -3,6 +3,7 @@ body {
 }
 
 h1 {
+  padding: -40px 50px;
   color: gray;
 }
 header {
@@ -13,8 +14,8 @@ img.figure {
   height: 50px;
   width: 50px;
 }
-.center {
-  margin: 25px 320px;
+.top {
+  margin: 25px 450px;
   text-align: center;
   border-radius: 10px;
   padding: 10px;
@@ -26,6 +27,7 @@ img.figure {
 #user_input {
   background-color: rgb(167, 241, 245);
   color: rgb(133, 116, 116);
+  height: 2.92rem;
   width: 70%;
   margin: 0px;
   font-size: 24px;
@@ -33,17 +35,23 @@ img.figure {
   border-radius: 6px;
 }
 
+.buttons {
+  display: flex;
+  margin: 10px 0px 10px 180px;
+  /* margin: 4px 2px 0px 8px; */
+}
+
 button {
   background-color: #f5af53;
-  height: 45px;
+  height: 2.75rem;
   border: none;
   color: white;
-  padding: 10px 5px 10px;
+  padding: 10px 5px 10px 5px;
   border: 2px solid rgb(100, 71, 71);
   border-radius: 6px;
   font-size: 18px;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: 4px 2px 0px 8px;
   cursor: pointer;
 }
 .icon {
@@ -59,6 +67,7 @@ input {
 
 .list-container {
   color: rgb(61, 58, 58);
+  align-items: center;
   font-size: 30px;
 }
 

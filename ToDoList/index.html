@@ -18,20 +18,20 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div class="center">
+    <div class="top">
         <header>
             <h1>To-Do List<img src="https://cdn-icons-png.flaticon.com/128/3176/3176366.png" class="figure"
                     alt="to-do-logo">
             </h1>
         </header>
-        <input id="user_input" type="search" placeholder="Add an item to the list">
-        <button class="submit">Submit</button>
-        <button class="clear_checked" type="button">Clear <span class="icon">☑</span></button>
-        <button class="clear_list" type="button">Clear List</button>
-
-
-
-
+        <div class="input">
+            <input id="user_input" type="search" placeholder="Add an item to the list">
+        </div>
+        <div class="buttons">
+            <button class="submit" type="submit">Submit</button>
+            <button class="clear_checked" type="button">Clear <span class="icon">☑</span></button>
+            <button class="clear_list" type="button">Clear List</button>
+        </div>
     </div>
     <div class="list-container">
         <ul id="menu" class="standard-list">
