@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  letter-spacing: 0.1rem;
+}
+
+/* .backImg {
+  background-image: url("https://static.sheetgo.com/wp-content/uploads/2020/05/icons-expense-tracker.svg");
+  background-repeat: repeat-y;
+  background-size: 10%;
+} */
+
+header {
+  background-color: #588c94;
+  color: white;
+  padding: 0px;
+  text-align: center;
+  font-weight: bold;
+}
+
+img {
+  width: 65px;
+  height: 65px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.income-input {
+  background-color: rgb(61, 192, 111);
+  width: 225px;
+  margin: 25px auto;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  padding: 30px;
+  color: white;
+}
+
+.bal-exp {
+  background-color: rgb(121, 156, 91);
+  color: white;
+  width: 260px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+  margin: 25px auto;
+}
+
+.bal-exp-cols {
+  display: flex;
+  justify-content: center;
+}
+
+.col-left {
+  padding: 0 0 0 14px;
+  float: left;
+}
+
+.col-right {
+  padding: 0 0 0 14px;
+  float: right;
+}
+
+.divider {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 48%;
+  bottom: 175%;
+  border-left: 1px solid white;
+  height: 100px;
+}
+
+.expense-categories-cols {
+  justify-content: center;
+  display: flex;
+}
+
+.housing {
+  background-color: lightsalmon;
+  width: 250px;
+  margin: 15px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  padding: 25px;
+}
+
+input.income {
+  margin: 25px 0 0 0;
+}
+
+select {
+  font-size: 1rem;
+  color: rgb(33, 51, 187);
+  background-color: rgb(255, 255, 255);
+
+  margin: 25px;
+  border-radius: 4px;
+  width: 200px;
+  padding: 10px;
+  letter-spacing: 0.1rem;
+}
+
+.housing-expense-list-wrapper {
+  display: flex;
+}
+
+div select:hover {
+  background-color: rgb(235, 248, 253);
+}
+input {
+  font-size: 1rem;
+  height: 1.6rem;
+  width: 12rem;
+  border-radius: 5px;
+}
+
+input:focus {
+  background-color: rgb(200, 200, 200);
+}
+
+.living {
+  background-color: rgb(104, 115, 163);
+  color: white;
+  width: 250px;
+  margin: 15px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  padding: 25px;
+}
+
+.fa-solid.fa-circle-plus {
+  padding: 12px;
+}
+
+.long-term {
+  background-color: rgb(87, 163, 177);
+  color: white;
+  width: 250px;
+  margin: 15px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  padding: 25px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+input:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.calc-button {
+  margin: 0 50px;
+  align-items: center;
+}
+
+button.calculate {
+  color: white;
+  background: green;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 10px 80px;
+  margin: 50px 610px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
