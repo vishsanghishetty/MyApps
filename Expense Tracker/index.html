@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Monthly Expense Tracker</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <header>
+        <div class="logo">
+            <img
+                src='https://play-lh.googleusercontent.com/vc27eDImeVSpG3VxsQ9o-jlW7CEzEQ8M5dbjYVQy43ZQCtn3cVSDql5l0QH5jBqV3eE=s180' />
+        </div>
+        <div class="name">
+            <h1>Household Expense Tracker</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="income-input">
+            <label for="income" class="income-label">Income</label>
+            <input type="number" class="income" min="0" max="" step="500" placeholder="Your Income">
+        </div>
+
+        <div class="bal-exp">
+            <div class="bal-exp-cols">
+                <div class="col-left">
+                    <h3>Your Balance</h3>
+                    <p>$0.00</p>
+                </div>
+                <div class="divider"></div>
+                <div class="col-right">
+                    <h3>Your Expenses</h3>
+                    <p>$0.00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="expense-housing">
+            <div class="expense-categories-cols">
+                <div class="housing">
+                    <div class="label-housing">
+                        <label for="house-expenses">Housing Expenses</label>
+                    </div>
+                    <div class="housing-select">
+                        <select name="housing-dropdown" id="housing">
+                            <option value="">Mortgage/Rent</option>
+                            <option value="">Phone</option>
+                            <option value="">Electricity</option>
+                            <option value="">Gas</option>
+                            <option value="">Water and Sewer</option>
+                            <option value="">Cable</option>
+                            <option value="">Waste Removal</option>
+                            <option value="">Phone</option>
+                            <option value="">Internet</option>
+                            <option value="">Other</option>
+                        </select>
+                    </div>
+                    <input type="number" value="" min="0" max="" step="10" class="housing-expense-amt"
+                        placeholder="Household Expense" />
+                    <div class="plus-icon"><i class="fa-solid fa-circle-plus" id="housing-btn"></i>
+                    </div>
+                    <div class="housing-exp-balance"></div>
+
+                </div>
+
+
+                <div class="living">
+                    <div class="label-living">
+                        <label for="living-expenses">Living Expenses</label>
+                    </div>
+                    <div class="living-select">
+                        <select name="living-dropdown" id="living">
+                            <option value="">Groceries</option>
+                            <option value="">Food</option>
+                            <option value="">Household items</option>
+                            <option value="">Personal and Beauty items</option>
+                            <option value="">Entertainment</option>
+                            <option value="">Childcare</option>
+                            <option value="">Spending Money</option>
+                            <option value="">Other</option>
+                        </select>
+                    </div>
+                    <input type="number" value="" min="0" max="" step="10" class="living-expense-amt"
+                        placeholder="Living Expense" />
+                    <div class="plus-icon"><i class="fa-solid fa-circle-plus" id="living-btn"></i>
+                    </div>
+                    <div class="living-exp-balance"></div>
+
+                </div>
+
+                <div class="long-term">
+                    <div class="label-long-term">
+                        <label for="long-term">Long Term Expenses</label>
+                    </div>
+                    <div class="select-long-term">
+                        <select name="lgtm-dropdown" id="lgtm">
+                            <option value="">Life Insurance</option>
+                            <option value="">Renter Insurance</option>
+                            <option value="">Health Insurance</option>
+                            <option value="">Emergency Fund and Beauty</option>
+                            <option value="">Savings Fund</option>
+                            <option value="">Retirement Fund</option>
+                            <option value="">Vacation Fund</option>
+                            <option value="">Kids College Education Fund</option>
+                            <option value="">Other</option>
+                        </select>
+                    </div>
+                    <input type="number" value="" min="0" max="" step="10" class="lgtm-expense-amt"
+                        placeholder="Long-term Expense" />
+                    <div class="plus-icon"><i class="fa-solid fa-circle-plus" id="lgtm-btn"></i>
+                    </div>
+                    <div class="lgtm-exp-balance"></div>
+                </div>
+            </div>
+        </div>
+        <div class="calc-button">
+            <button class="calculate">Calculate</button>
+        </div>
+
+    </main>
+
+    <script src="script.js" async defer></script>
+</body>
+
+</html>
