@@ -48,26 +48,7 @@ continue_button.onclick = () => {
 }
 
 const quit_quiz = score_box.querySelector(".score-box-buttons .quit-quiz");
-// const replay_quiz = score_box.querySelector(".score-box-buttons .replay-quiz");
-// let ques_count = 0;
-// let timeValue = 20;
-// replay_quiz.onclick = () => {
 
-//     quiz_box.classList.add("activeQuiz"); //show quiz box
-//     score_box.classList.remove("activeScore");
-//     clearInterval(counter);
-//     start_timer(time_value);
-//     showQuestion(ques_count);
-//     next_btn.classList.remove("show");
-//     // if (replay_counter == 4) {
-//     //     show_score.classList.add("show");
-//     // }
-//     // else {
-//     //     show_score.classList.remove("show");
-//     //     next_btn.classList.add("show");
-//     // }
-//     timer_left_text.textContent = "Time Left"; //change the text of timeText to Time Left
-// }
 
 quit_quiz.onclick = () => {
 
@@ -83,7 +64,7 @@ const showQuestion = (index) => {
 
     ques_text.innerHTML = question_tag; //adding the question span tag to ques_text element as inner html
 
-    let option_tag = "<div class= 'option'><span>" + questions[index].options[0] + "</span></div>" +
+    let option_tag = "<div class='option'><span>" + questions[index].options[0] + "</span></div>" +
         "<div class='option'><span>" + questions[index].options[1] + "</span></div>" +
         "<div class='option'><span>" + questions[index].options[2] + "</span></div>" +
         "<div class='option'><span>" + questions[index].options[3] + "</span></div>";
