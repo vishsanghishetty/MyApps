@@ -15,7 +15,7 @@ body {
 header {
   position: fixed;
   min-height: 75px;
-  padding: 0 20px;
+  padding: 0 75px;
   justify-content: space-around;
   align-items: center;
   background-color: #eee;
@@ -24,16 +24,13 @@ header {
 
 header img#header-img {
   float: left;
-  width: 30%;
-  line-height: 20px;
-  text-align: center;
+  width: 40%;
+  line-height: 5px;
 }
 
 header #nav-bar {
   float: right;
-  width: 70%;
-  line-height: 40px;
-  text-align: center;
+  line-height: 20px;
 }
 
 a {

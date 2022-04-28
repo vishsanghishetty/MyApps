@@ -172,6 +172,7 @@ input:focus {
 .calc-button {
   margin: 0 50px;
   align-items: center;
+  max-width: 100%;
 }
 
 button.calculate {
@@ -180,7 +181,7 @@ button.calculate {
   font-size: 25px;
   font-weight: 500;
   padding: 10px 80px;
-  margin: 50px 610px;
+  margin: 50px 700px;
   outline: none;
   border: none;
   border-radius: 10px;
