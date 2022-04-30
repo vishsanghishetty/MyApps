@@ -15,7 +15,6 @@ let totalHousing = 0;
 housing_exp_balance.innerHTML = totalHousing;
 
 function displayHousingExpenseListCards() {
-
     calculateHousingExpenses();
     let housingDivElement = document.createElement('div');
     housingDivElement.className = 'housing-expense-list-wrapper';
@@ -31,9 +30,15 @@ function displayHousingExpenseListCards() {
 
 function calculateHousingExpenses() {
     let housing_input = `${housing_exp_input.value}`;
-    totalHousing = totalHousing + parseInt(housing_input);
-    housing_exp_balance.innerHTML = totalHousing;
-    console.log(housing_exp_balance.innerHTML = totalHousing);
+    if (housing_input === '') {
+        alert("Enter a value for the housing expense");
+    }
+    else {
+        totalHousing = totalHousing + parseInt(housing_input);
+        housing_exp_balance.innerHTML = totalHousing;
+        console.log(housing_exp_balance.innerHTML = totalHousing);
+    }
+
 }
 
 
@@ -64,9 +69,14 @@ function displayLivingExpenseListCards() {
 
 function calculateLivingExpenses() {
     let living_input = `${living_exp_input.value}`;
-    totalLiving = totalLiving + parseInt(living_input);
-    living_exp_balance.innerHTML = totalLiving;
-    console.log(living_exp_balance.innerHTML = totalLiving);
+    if (living_input === '') {
+        alert("Enter a value for the living expense");
+    }
+    else {
+        totalLiving = totalLiving + parseInt(living_input);
+        living_exp_balance.innerHTML = totalLiving;
+        console.log(living_exp_balance.innerHTML = totalLiving);
+    }
 }
 
 /* 
@@ -96,9 +106,15 @@ function displayLongTermExpenseListCards() {
 
 function calculateLongTermExpenses() {
     let lgtm_input = `${lgtm_exp_input.value}`;
-    totalLongTerm = totalLongTerm + parseInt(lgtm_input);
-    lgtm_exp_balance.innerHTML = totalLongTerm;
-    console.log(lgtm_exp_balance.innerHTML = totalLongTerm);
+
+    if (lgtm_input === '') {
+        alert("Enter a value for the living expense");
+    }
+    else {
+        totalLongTerm = totalLongTerm + parseInt(lgtm_input);
+        lgtm_exp_balance.innerHTML = totalLongTerm;
+        console.log(lgtm_exp_balance.innerHTML = totalLongTerm);
+    }
 }
 
 
