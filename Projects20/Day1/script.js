@@ -20,19 +20,26 @@ const showSuccess = (input) => {
     form_control.className = 'form-control success';
 }
 
-const isEmailValid = (email) => {
+const checkEmail = (input) => {
     const reg_exp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return String(email)
-        .toLowerCase()
-        .match(reg_exp);
+
+    if (reg_exp.test(input.value.trim())) {
+
+        showSuccess(input);
+    }
+    else {
+        showError(input, `${getFieldName(input)} must be valid`)
+
+    }
 }
+
 
 const checkRequired = (inputArr) => {
 
     inputArr.forEach((input) => {
 
         if (input.value.trim() === '') {
-            showError(input, `${getInputId(input)} is required`); //showError(element, message)
+            showError(input, `${getFieldName(input)} is required`); //showError(element, message)
         }
         else {
             showSuccess(input);
@@ -40,18 +47,44 @@ const checkRequired = (inputArr) => {
 
     })
 
-    function getInputId(input) {
-        console.log(input.id.charAt(0) + input.id.slice(1));
-        return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+function getFieldName(input) {
+    console.log(input.id.charAt(0) + input.id.slice(1));
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 
+}
+const checkLength = (input, min, max) => {
+
+    if (input.value.length < min) {
+        showError(input, `${getFieldName(input)} must be at least ${min} characters`);
     }
+    else if (input.value.length > max) {
+        showError(input, `${getFieldName(input)} must be less than ${max} characters`);
+    }
+    else {
+        showSuccess(input);
+    }
+}
 
+const checkPasswordsMatch = (password, confirmPassword) => {
 
+    if (password.value !== confirmPassword.value) {
+        showError(confirmPassword, 'Passwords do not match')
+    }
+    else {
+
+        showSuccess(password);
+        showSuccess(confirmPassword);
+    }
 }
 
 //Event Listeners
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     const inputArray = [username, email, password, passwordConfirmation];
-    checkRequired(inputArray);
+    checkRequired(inputArray); //checking all the required fields
+    checkLength(username, 3, 15); //username field
+    checkLength(password, 6, 20); //password field
+    checkEmail(email);
+    checkPasswordsMatch(password, passwordConfirmation);
 });
