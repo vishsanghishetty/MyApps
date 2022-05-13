@@ -107,6 +107,7 @@ input[type="text"] {
 }
 
 .single-meal-info {
+  font-weight: bold;
   margin: 20px;
   padding: 10px;
   border: 2px #e098 dashed;
